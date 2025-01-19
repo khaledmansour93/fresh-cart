@@ -1,4 +1,8 @@
-import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import {
+  createBrowserRouter,
+  HashRouter,
+  RouterProvider,
+} from "react-router-dom";
 import Login from "./pages/Login/Login";
 import Signup from "./pages/Signup/Signup";
 import Home from "./pages/Home/Home";
@@ -23,7 +27,7 @@ import VerifyCode from "./pages/VerifyCode/VerifyCode";
 import ResetPassword from "./pages/ResetPassword/ResetPassword";
 
 function App() {
-  const router = createBrowserRouter([
+  const router = HashRouter([
     {
       path: "/",
       element: (
@@ -59,6 +63,43 @@ function App() {
       ],
     },
   ]);
+
+  // const router = createBrowserRouter([
+  //   {
+  //     path: "/",
+  //     element: (
+  //       <ProtectedRoute>
+  //         <Layout />
+  //       </ProtectedRoute>
+  //     ),
+  //     children: [
+  //       { index: true, element: <Home /> },
+  //       { path: "cart", element: <Cart /> },
+  //       { path: "product/:id", element: <ProductDetails /> },
+  //       { path: "checkout", element: <Checkout /> },
+  //       { path: "allorders", element: <Orders /> },
+  //       { path: "categories", element: <Categories /> },
+  //       { path: "brands", element: <Brands /> },
+  //       { path: "wishlist", element: <Wishlist /> },
+  //     ],
+  //   },
+
+  //   {
+  //     path: "/",
+  //     element: (
+  //       <GuestRoute>
+  //         <Layout />
+  //       </GuestRoute>
+  //     ),
+  //     children: [
+  //       { path: "signup", element: <Signup /> },
+  //       { path: "login", element: <Login /> },
+  //       { path: "forgetpassword", element: <ForgetPassword /> },
+  //       { path: "verifycode", element: <VerifyCode /> },
+  //       { path: "resetpassword", element: <ResetPassword /> },
+  //     ],
+  //   },
+  // ]);
 
   const myClient = new QueryClient();
 
